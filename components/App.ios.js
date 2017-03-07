@@ -58,7 +58,7 @@ class App extends Component {
     const {state, actions} = this.props;
     if (state.rendering) {
       return (
-        <Image
+        <Image 
           source= {{uri: 'https://media.blueapron.com/assets/loader/pot-loader-6047abec2ec57c18d848f623c036f7fe80236dce689bb48279036c4f914d0c9e.gif'}}
           style = {styles.loadingGif}
         />
