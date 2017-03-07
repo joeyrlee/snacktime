@@ -63,9 +63,10 @@ class FacebookLogin extends Component {
             onLogoutFinished={
               () => {
                 this.props.actions.facebookLoginOut();
-                alert("logout.")}
+                Alert.alert("Successfully Logged Out")
               }
-            />
+            }
+          />
         </View>
       );
     }
