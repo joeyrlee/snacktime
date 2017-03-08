@@ -127,15 +127,14 @@ class Recipe extends Component {
             let image = step.ingredients[0] ? step.ingredients[0].image : 'https://s3-us-west-1.amazonaws.com/filmedin/food+(1).png';
             return (
             <View
-              key={i}
+              key={i} 
               style={styles.recipeStep}
               underlayColor="grey"
-            >
-              <Image source={{uri: image}} style={styles.recipeImage} />
-              <Text style={styles.recipeStepText}>step {step.number}: {step.step}</Text>
+              >
+                <Image source={{uri: image}} style={styles.recipeImage} />
+                <Text style={styles.recipeStepText}>step {step.number}: {step.step}</Text>
             </View>
-            )}
-          }
+            )}}
         />
       </View>
     )
