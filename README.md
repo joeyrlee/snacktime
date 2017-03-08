@@ -1,5 +1,5 @@
 # Snacktime
-A native iOS app that allows you to take pictures of, or search for, food and ingredients and receive back recommendations of food/ingredients <strong>that pair well</strong> as well as recipes that combine everything together!
+A native iOS app that allows you to take pictures of, or search for, food and ingredients and receive back recommendations of food/ingredients <strong>that pair well</strong> as well as recipes that combine everything into one culinary confection!
 
 ![alt tag](./public/welcomePage.png)
 
