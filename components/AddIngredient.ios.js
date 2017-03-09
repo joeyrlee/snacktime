@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-import { Text, View, Image, TextInput, ListView, TouchableHighlight, TouchableOpacity, Switch } from 'react-native';
+import {
+  Text,
+  View,
+  Image,
+  TextInput,
+  ListView,
+  TouchableHighlight,
+  TouchableOpacity,
+  Switch
+} from 'react-native';
 import helpers from '../helpers/helpers.js';
 import styles from '../styles.ios.js';
 import FoodpairResults from './FoodpairResults.ios.js';
