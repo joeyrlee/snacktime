@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
-import { Linking, Alert, TouchableOpacity, Text, View, Image, TextInput, ListView, TouchableHighlight } from 'react-native';
-import helpers from '../helpers/helpers.js';
+import {
+  Linking,
+  Alert,
+  TouchableOpacity,
+  Text,
+  View,
+  Image,
+  TextInput,
+  ListView,
+  TouchableHighlight
+} from 'react-native';
 import styles from '../styles.ios.js';
 import AddRecipe from './AddRecipe.ios.js';
 import ShareFacebook from './ShareFacebook.ios.js';
@@ -53,7 +62,7 @@ class Recipe extends Component {
 
   //DRY click handler for social media deep linking
   shareToSocialMedia(deepLink, appName, storeURL) {
-    //deep link into the provided app if installed, else direct user to the proper app store link
+    //deep link into the provided app if installed
     Linking.canOpenURL(appName.toLowerCase() + '://').then(supported => {
       if (!supported) {
         Alert.alert(`You must install the ${appName} app in order to use this feature.`,
@@ -61,10 +70,11 @@ class Recipe extends Component {
                     [{text: `Install ${appName}`, onPress: () => Linking.openURL(storeURL)},
                      {text: 'Not Now'}]
         );
+      //else direct user to the proper app store link
       } else {
         return Linking.openURL(deepLink);
       }
-    }).catch(err => /*Alert.alert('Error; ', err), */console.error('Error: ', err));
+    }).catch(err => console.error('Error: ', err));
   }
 
   render() {
@@ -105,6 +115,7 @@ class Recipe extends Component {
               </TouchableOpacity>
               <TouchableOpacity onPress={
                 () => this.shareToSocialMedia(
+                  //pre-poplated tweet that includes the recipe name, url for more info, and the app name
                   `twitter://post?message=I%20just%20made%20${this.props.food.split(' ').join('%20')}%20with%20a%20little%20help%20from%20the%20app%20Snacktime!
 
                   ${this.props.recipe.sourceUrl}`,
