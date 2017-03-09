@@ -44,17 +44,6 @@ class App extends Component {
     })
   }
 
-  handleTwitterLogin() {
-    SafariView.isAvailable()
-      .then(SafariView.show({
-        url: 'https://github.com/naoufal'
-      }))
-      .catch(error => {
-        // Fallback WebView code for iOS 8 and earlier
-        Linking.openURL('https://api.twitter.com/oauth/authenticate?oauth_token=')
-      });
-  }
-
   rendering() {
     actions.rendering();
     this.forceUpdate()
@@ -80,12 +69,6 @@ class App extends Component {
         <View style={styles.app} >
           <Image style={styles.welcomeImage} source={require('../public/snacktimewelcome.jpg')}/>
           <FacebookLogin />
-
-          {/* Experimental twitter OAuth safari view controller 3-legged OAuth login */}
-          <TouchableOpacity onPress={() => handleTwitterLogin()}>
-
-          </TouchableOpacity>
-
         </View>
         { /* conditional camera / search bar render */
           state.showSearchBar
