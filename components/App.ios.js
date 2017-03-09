@@ -5,7 +5,8 @@ import {
   Image,
   TouchableHighlight,
   TouchableOpacity,
-  Switch
+  Switch,
+  Linking
 } from 'react-native';
 import styles from '../styles.ios.js';
 import Nav from './Navbar.ios.js';
@@ -16,6 +17,7 @@ import * as app from '../actions/appActions.ios.js';
 import getApp from '../reducers/appReducers.ios.js';
 import camera from './Camera.ios.js';
 import FacebookLogin from './FacebookLogin.ios.js';
+var SafariView = require('react-native-safari-view');
 
 class App extends Component {
   constructor(props) {
@@ -42,10 +44,22 @@ class App extends Component {
     })
   }
 
+  handleTwitterLogin() {
+    SafariView.isAvailable()
+      .then(SafariView.show({
+        url: 'https://github.com/naoufal'
+      }))
+      .catch(error => {
+        // Fallback WebView code for iOS 8 and earlier
+        Linking.openURL('https://api.twitter.com/oauth/authenticate?oauth_token=')
+      });
+  }
+
   rendering() {
     actions.rendering();
     this.forceUpdate()
   }
+
   render() {
     const {state, actions} = this.props;
     if (state.rendering) {
@@ -66,6 +80,12 @@ class App extends Component {
         <View style={styles.app} >
           <Image style={styles.welcomeImage} source={require('../public/snacktimewelcome.jpg')}/>
           <FacebookLogin />
+
+          {/* Experimental twitter OAuth safari view controller 3-legged OAuth login */}
+          <TouchableOpacity onPress={() => handleTwitterLogin()}>
+
+          </TouchableOpacity>
+
         </View>
         { /* conditional camera / search bar render */
           state.showSearchBar
