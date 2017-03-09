@@ -45,7 +45,8 @@ export default class camera extends Component {
           }}
           style={styles.preview}
           aspect={Camera.constants.Aspect.fill}
-          captureTarget={Camera.constants.CaptureTarget.memory}>
+          captureTarget={Camera.constants.CaptureTarget.memory}
+        >
           <View style={styles.navigationResults}>
             <TouchableHighlight style={[styles.backButtonCamera, this.border('white')]} onPress={this.goBack.bind(this)}>
               <Image style={styles.backButtonImage} source={{uri: 'https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/back_button-128.png'}} />
