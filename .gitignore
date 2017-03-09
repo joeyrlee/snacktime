@@ -31,6 +31,8 @@
 
 node_modules
 android
+app.json
 server/utils/apiKeys.js
 .elasticbeanstalk/
 .DS_Store
+index.android.js
