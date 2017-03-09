@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {
-  Text,
-  View,
-  Image,
-  TextInput,
-  ListView,
-  TouchableHighlight,
-  TouchableOpacity,
+  Text, 
+  View, 
+  Image, 
+  TextInput, 
+  ListView, 
+  TouchableHighlight, 
+  TouchableOpacity, 
   Switch
 } from 'react-native';
 import helpers from '../helpers/helpers.js';
@@ -123,28 +123,28 @@ class AddIngredient extends Component {
               </View>
             )}
           />
-            <TouchableOpacity
-              style={styles.searchIconContainer}
-              onPress={this.searchMultipleFoodpairs.bind(this)}
-            >
-              <Image style={styles.searchIcon} source={require('../public/searchicon.png')} />
-            </TouchableOpacity>
-            <View style={styles.addMoreIngredientsContainer}>
-              <View style={styles.searchBarPictureFrame}>
-                <TextInput
-                  onSubmitEditing={this.addIngredient.bind(this)}
-                  style={styles.addIngredientInput}
-                  onChangeText={(ingredientToAdd) => this.setState({ingredientToAdd})}
-                  value={this.state.ingredientToAdd}
-                  placeholder={'Add ingredient'}
-                />
-              </View>
-              <Switch 
-                onValueChange={actions.showSearch}
-                style={styles.addIngredientSwitch}
-                value={state.showSearch}
-                />
+          <TouchableOpacity
+            style={styles.searchIconContainer}
+            onPress={this.searchMultipleFoodpairs.bind(this)}
+          >
+            <Image style={styles.searchIcon} source={require('../public/searchicon.png')} />
+          </TouchableOpacity>
+          <View style={styles.addMoreIngredientsContainer}>
+            <View style={styles.searchBarPictureFrame}>
+              <TextInput
+                onSubmitEditing={this.addIngredient.bind(this)}
+                style={styles.addIngredientInput}
+                onChangeText={(ingredientToAdd) => this.setState({ingredientToAdd})}
+                value={this.state.ingredientToAdd}
+                placeholder={'Add ingredient'}
+              />
             </View>
+            <Switch 
+              onValueChange={actions.showSearch}
+              style={styles.addIngredientSwitch}
+              value={state.showSearch}
+            />
+          </View>
         </View>
       )
     } else {
@@ -185,7 +185,7 @@ class AddIngredient extends Component {
               onValueChange={actions.showSearch}
               style={styles.addIngredientSwitch}
               value={state.showSearch}
-              />
+            />
           </View>
         </View>
       )
