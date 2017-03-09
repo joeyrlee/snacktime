@@ -54,13 +54,14 @@ export default class GoogleResults extends Component {
             <TouchableHighlight
               onPress={this.onPress.bind(this, rowData)}
               underlayColor="blue"
-              >
+            >
               <View style={styles.googleListItem}>
                 <Image style={styles.arrow} source={{uri: 'https://maxcdn.icons8.com/Android_L/PNG/512/User_Interface/circled_chevron_right-512.png'}} />
                 <Text style={styles.text}>{rowData}</Text>
               </View>
             </TouchableHighlight>
-            )}
+            )
+          }
         />
       </View>
     );
