@@ -1,11 +1,6 @@
 'use strict';
 import React, { Component } from 'react';
-import {
-  Text,
-  Image,
-  TouchableHighlight,
-  View
-} from 'react-native';
+import { Text, Image, TouchableHighlight, View } from 'react-native';
 import Camera from 'react-native-camera';
 import helpers from '../helpers/helpers.js';
 var axios = require('axios');
