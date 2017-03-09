@@ -113,7 +113,10 @@ class Recipe extends Component {
               </TouchableOpacity>
               <TouchableOpacity onPress={
                 () => this.shareToSocialMedia(
+<<<<<<< HEAD
                   //pre-poplated tweet that includes the recipe name, url for more info, and the app name
+=======
+>>>>>>> 075c7a2af58bbb59df46fc9454bf29bae87d5b63
                   `twitter://post?message=I%20just%20made%20${this.props.food.split(' ').join('%20')}%20(${this.props.food})%20with%20a%20little%20help%20from%20the%20app%20Snacktime!
 
                   ${this.props.recipe.sourceUrl}`,
