@@ -56,12 +56,14 @@ export default class Welcome extends Component {
             repeat
             resizeMode='cover'
             source={require('../public/food.mp4')}
-            style={styles.backgroundVideo} />
+            style={styles.backgroundVideo}
+          />
           <Animatable.Text
             style={styles.header}
             animation="fadeInDown"
             duration={4000}
-            direction="alternate" >
+            direction="alternate"
+          >
             <Text>Snacktime</Text>
           </Animatable.Text>
 
@@ -71,10 +73,10 @@ export default class Welcome extends Component {
             color="#841584"
             delay={2000}
             duration={4000}
-            >
+          >
             <Text>Touch Anywhere to begin</Text>
           </Animatable.Text>
-      </View>
+        </View>
       </TouchableWithoutFeedback>
     );
   }
