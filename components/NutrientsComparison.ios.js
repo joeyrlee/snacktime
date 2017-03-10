@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { Text, View, Image, TextInput, ListView, TouchableHighlight, ScrollView } from 'react-native';
+import {
+  Text,
+  View,
+  Image,
+  TextInput,
+  ListView,
+  TouchableHighlight,
+  ScrollView
+} from 'react-native';
 import helpers from '../helpers/helpers.js';
 import Recipe from './Recipe.ios.js';
 import styles from '../styles.ios.js';
@@ -27,9 +35,12 @@ export default class NutrientsComparison extends Component {
   render() {
     const renderNutrients = (index) => {
       return Object.keys(this.props.results[index]).map((nutrient, i) => {
-          console.log(this.props.results[index][nutrient]);
+        console.log(this.props.results[index][nutrient]);
         return (
-          <Text style = {styles.ingredientListText} key={i} >{nutrient}: {this.props.results[index][nutrient][0]} {this.props.results[index][nutrient][1]}</Text>
+          <Text
+            style = {styles.ingredientListText}
+            key={i} >{nutrient}: {this.props.results[index][nutrient][0]} {this.props.results[index][nutrient][1]}
+          </Text>
         )
       })
     };
@@ -38,11 +49,17 @@ export default class NutrientsComparison extends Component {
       this.props.results[1][nutrient] = this.props.results[1][nutrient] ? this.props.results[1][nutrient] : [0, this.props.results[0][nutrient][1]]
       if (this.props.results[0][nutrient][0] > this.props.results[1][nutrient][0]) {
         return (
-          <Text style = {[styles.ingredientListText, {color: '#458B00'}]} key={i}>⇦  {nutrient}: {Math.floor(Math.abs(this.props.results[0][nutrient][0] - this.props.results[1][nutrient][0]))} {this.props.results[1][nutrient][1]}</Text>
+          <Text
+            style = {[styles.ingredientListText, {color: '#458B00'}]}
+            key={i}>⇦  {nutrient}: {Math.floor(Math.abs(this.props.results[0][nutrient][0] - this.props.results[1][nutrient][0]))} {this.props.results[1][nutrient][1]}
+          </Text>
         )
       } else {
         return (
-          <Text style = {[styles.ingredientListText, {color: '#B22222'}]} key={i}>{nutrient}: {Math.floor(Math.abs(this.props.results[0][nutrient][0] - this.props.results[1][nutrient][0]))} {this.props.results[1][nutrient][1]}  ⇨</Text>
+          <Text
+            style = {[styles.ingredientListText, {color: '#B22222'}]}
+            key={i}>{nutrient}: {Math.floor(Math.abs(this.props.results[0][nutrient][0] - this.props.results[1][nutrient][0]))} {this.props.results[1][nutrient][1]}  ⇨
+          </Text>
         )
       }
     })
