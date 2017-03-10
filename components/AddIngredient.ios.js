@@ -6,7 +6,7 @@ import {
   TextInput, 
   ListView, 
   TouchableHighlight, 
-  TouchableOpacity, 
+  TouchableOpacity,
   Switch
 } from 'react-native';
 import helpers from '../helpers/helpers.js';
