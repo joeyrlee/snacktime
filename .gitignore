@@ -33,3 +33,4 @@ node_modules
 android
 server/utils/apiKeys.js
 .elasticbeanstalk/
+.DS_Store
