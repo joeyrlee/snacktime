@@ -97,7 +97,7 @@ class UserPage extends Component {
                     <TouchableHighlight style={styles.backButtonCamera} onPress={this.deleteRecipe.bind(this, data.id)}>
                       <Image
                         style={styles.backButtonImage}
-                        source={{uri: 'https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/back_button-128.png'}}
+                        source={require('../public/removeicon.png')}
                       />
                     </TouchableHighlight>
                 </View>
