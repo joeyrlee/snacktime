@@ -130,7 +130,7 @@ export default class Recipes extends Component {
                 style={styles.listItem}
                 underlayColor="grey"
                 style={styles.resultsList}
-                >
+              >
                 <TouchableHighlight onPress={this.selectRecipe.bind(this, recipe.id, recipe.title, recipe.image)}>
                   <View style={styles.listItem}>
                     <Image style={styles.resultsPicture} source={{uri: recipe.image}} />
@@ -146,7 +146,7 @@ export default class Recipes extends Component {
                   </View>
                 </TouchableHighlight>
               </TouchableHighlight>
-              )}
+            )}
           />
         </View>
       )
