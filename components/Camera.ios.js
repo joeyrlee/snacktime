@@ -13,7 +13,6 @@ import styles from '../styles.ios.js';
 import GoogleResults from './GoogleResults.ios.js';
 
 export default class camera extends Component {
-
   constructor(props) {
     super(props)
   }
