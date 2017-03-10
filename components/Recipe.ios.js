@@ -151,7 +151,7 @@ class Recipe extends Component {
                     {console.log('step: ' + step.step)}
                     {console.log('***************************************')}
                     <Image source={{uri: image}} style={styles.recipeImage} />
-                    <Text style={styles.recipeStepText}>Step: {step.step}</Text>
+                    <Text style={styles.recipeStepText}>{step.step}</Text>
                   </View>
                 )
               :
