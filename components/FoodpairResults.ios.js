@@ -91,7 +91,7 @@ export default class FoodpairResults extends Component {
               style={styles.listItem}
               underlayColor="grey"
               value={foodpair}
-              >
+            >
               <TouchableHighlight onPress={this.selectFood.bind(this, foodpair._links.ingredient.name)}>
                 <View style={styles.listItem}>
                   <Image source={{uri: foodpair._links.ingredient._links.image.size_240}} style={styles.resultsPicture} />
@@ -106,7 +106,7 @@ export default class FoodpairResults extends Component {
                 </View>
               </TouchableHighlight>
             </TouchableHighlight>
-            )}
+          )}
         />
       </View>
     )
