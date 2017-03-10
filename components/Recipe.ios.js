@@ -137,16 +137,27 @@ class Recipe extends Component {
           dataSource={this.state.steps}
           renderRow={(step, i) => {
             let image = step.ingredients[0] ? step.ingredients[0].image : 'https://s3-us-west-1.amazonaws.com/filmedin/food+(1).png';
-            return (
-              <View
-                key={i} 
-                style={styles.recipeStep}
-                underlayColor="grey"
-              >
-                <Image source={{uri: image}} style={styles.recipeImage} />
-                <Text style={styles.recipeStepText}>step {step.number}: {step.step}</Text>
-              </View>
-            )
+            let stepCounter = 1;
+            {/* Conditional render to accomodate the spoonacular api returning empty step results */}
+            return step.step.length > 1
+              ? 
+                (
+                  <View
+                    key={i} 
+                    style={styles.recipeStep}
+                    underlayColor="grey"
+                  >
+                    {console.log('***************************************')}
+                    {console.log('step: ' + step.step)}
+                    {console.log('***************************************')}
+                    <Image source={{uri: image}} style={styles.recipeImage} />
+                    <Text style={styles.recipeStepText}>Step: {step.step}</Text>
+                  </View>
+                )
+              :
+                (
+                  <Text></Text>
+                )
           }}
         />
       </View>
