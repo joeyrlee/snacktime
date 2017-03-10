@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {
-        View,
-        Text,
-        Image,
-        ScrollView,
-        ListView,
-        TouchableHighlight
-      } from 'react-native';
+  View,
+  Text,
+  Image,
+  ScrollView,
+  ListView,
+  TouchableHighlight
+} from 'react-native';
 import styles from '../styles.ios.js';
 import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -43,9 +43,12 @@ class UserPage extends Component {
       "id": userid
     }
     axios.post(`${local}createUser`, reqBody)
-    .then((reponese) => {
-    }).catch((error) => {
-    });
+      .then((reponese) => {
+    
+      })
+      .catch((error) => {
+        
+      });
   }
 
   deleteRecipe(recipeId) {
@@ -74,41 +77,46 @@ class UserPage extends Component {
   }
 
   render() {
-    if (this.props.state.isAuthenticated) {
-    return (
-      <View>
-        <Text style={{marginTop: 25}}>UserHomePage</Text>
-        <TouchableHighlight style={styles.backButtonCamera} onPress={this.goBack.bind(this)}>
-          <Image style={styles.backButtonImage} source={{uri: 'https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/back_button-128.png'}} />
-        </TouchableHighlight>
-        <Text>Your FavoriteRecipe</Text>
-        <ScrollView style={{marginBottom: 110}}>
-        {this.state.dataSource.map((data, index) => (
-          <View key={index} style={styles.ingredientContainer}>
-            <View style={styles.ingredientList}>
-              <Text>Recipe Name: {data.name}</Text>
-                <View style={styles.recipeImageAndIcons}>
-                  <Image source={{uri: data.image}} style={styles.recipeImage} />
+    this.props.state.isAuthenticated
+      ?
+        (
+          <View>
+            <Text style={{marginTop: 25}}>User Home Page</Text>
+            <TouchableHighlight style={styles.backButtonCamera} onPress={this.goBack.bind(this)}>
+              <Image style={styles.backButtonImage} source={{uri: 'https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/back_button-128.png'}} />
+            </TouchableHighlight>
+            <Text>Your Favorite Recipe</Text>
+            <ScrollView style={{marginBottom: 110}}>
+            {
+              this.state.dataSource.map((data, index) => (
+                <View key={index} style={styles.ingredientContainer}>
+                  <View style={styles.ingredientList}>
+                    <Text>Recipe Name: {data.name}</Text>
+                    <View style={styles.recipeImageAndIcons}>
+                      <Image source={{uri: data.image}} style={styles.recipeImage} />
+                    </View>
+                    <TouchableHighlight style={styles.backButtonCamera} onPress={this.goBack.bind(this)}>
+                      <Image style={styles.backButtonImage} source={{uri: 'https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/back_button-128.png'}} />
+                    </TouchableHighlight>
+                  </View>
                 </View>
                 <TouchableHighlight style={styles.backButtonCamera} onPress={this.deleteRecipe.bind(this, data.id)}>
-                  <Image style={styles.backButtonImage} source={{uri: 'https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/back_button-128.png'}} />
+                  <Image style={styles.backButtonImage} source={{uri: 'https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519583-080_Trash-128.png'}} />
                 </TouchableHighlight>
-            </View>
+              ))
+            }
+            </ScrollView>
           </View>
-        ))}
-        </ScrollView>
-      </View>
-    )
-  } else {
-    return (
-      <View style={{marginTop: 75}}>
-        <Text>Not login</Text>
-        <TouchableHighlight style={styles.backButtonCamera} onPress={this.goBack.bind(this)}>
-          <Image style={styles.backButtonImage} source={{uri: 'https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/back_button-128.png'}} />
-        </TouchableHighlight>
-      </View>
-      )
-    }
+        )
+      :
+        (
+          <View style={{marginTop: 75}}>
+            <Text>Not Logged In</Text>
+            <TouchableHighlight style={styles.backButtonCamera} onPress={this.goBack.bind(this)}>
+              <Image style={styles.backButtonImage} source={{uri: 'https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/back_button-128.png'}} />
+            </TouchableHighlight>
+          </View>
+        )
   }
 }
 
