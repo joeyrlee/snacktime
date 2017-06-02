@@ -1,5 +1,5 @@
 # Snacktime
-A native iOS app that allows you to take pictures of, or search for, food and ingredients and receive back recommendations of food/ingredients <strong>that pair well</strong> as well as recipes that combine everything into one culinary confection!
+A native iOS app that allows users to search via text or reverse image search (using the device camera) for foods and ingredients and receive back pairing recommendations as well as recipes that combine everything together into one delicious culinary confection!
 
 ![alt tag](./public/welcomePage.png)
 
@@ -16,7 +16,7 @@ A native iOS app that allows you to take pictures of, or search for, food and in
 ![alt tag](./public/recipePage.png)
 
 ### Getting Started
-To get started, simply clone or fork and clone the repo and follow the brief instructions here to setup the necessary Xcode compiler: https://developers.facebook.com/docs/ios/getting-started
+To get started, simply clone or fork the repo and follow the brief instructions here to setup the necessary Xcode compiler: https://developers.facebook.com/docs/ios/getting-started
 
 #### You will also need an API key for each of the following:
 
